@@ -1,0 +1,41 @@
+{%extends 'blog/base.html'%}
+{%load static%}
+ {%block title%} {{article.title}} {%endblock%}
+
+
+  {%block header%}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{article.thumbnail.url}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{article.title}}</h1>
+            <span class="meta">Posted by
+              <a href="#">{{article.author}}</a>
+             on {{article.publish}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  {%endblock%}
+  {%block content%}
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+        {{article.description|linebreaks}}
+
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+{%endblock%}
+ 
